@@ -9,12 +9,6 @@ export class Event {
   title: string;
   @Column()
   user: string;
-  @Transform(() => Date, { toPlainOnly: true })
-  @Column('text')
-  startDate: Date;
-  @Transform(() => Date, { toPlainOnly: true })
-  @Column('text')
-  endDate: Date;
-  @Column()
+  @Column({ default: false })
   isClosed: boolean;
 }
